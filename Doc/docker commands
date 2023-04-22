@@ -1,0 +1,13 @@
+
+docker
+docker build .
+docker images
+docker run -p 3000:3000 -d e09ade2c62e8
+docker run -p 3000:3000 94d9c989eb40
+docker ps
+docker ps -a
+docker stop 303b686cc710
+
+docker run node
+docker run -it node
+docker run -p 3000:80 -d 37e6dcd8f88a
