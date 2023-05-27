@@ -1,4 +1,6 @@
 
+files.exclude
+
 docker
 docker build .
 docker images
@@ -73,3 +75,11 @@ docker network ls
 docker network inspect favorites-net
 
 docker run --name favorites --network favorites-net -d --rm -p 3000:3000 favorites-node
+
+docker run --name mongodb -d --rm -p 27017:27017 mongo
+
+docker image prune -a
+
+docker build -t goals-node .
+
+docker run --name goals-backend --rm -d -p 80:80 goals-node
