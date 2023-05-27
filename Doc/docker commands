@@ -54,3 +54,22 @@ docker volume inspect feedback
 
 docker history 34a3caf60a2c
 
+docker build -t favorites-node .
+
+docker run --name favorites -d --rm -p 3000:3000 favorites-node
+
+docker run --name favorites --rm -p 3000:3000 favorites-node
+
+docker run -d --name mongodb --network favorites-net mongo
+
+docker inspect mongodb 
+
+docker container prune
+
+docker network create favorites-net
+
+docker network ls
+
+docker network inspect favorites-net
+
+docker run --name favorites --network favorites-net -d --rm -p 3000:3000 favorites-node
