@@ -83,3 +83,28 @@ docker image prune -a
 docker build -t goals-node .
 
 docker run --name goals-backend --rm -d -p 80:80 goals-node
+
+docker build -t goals-react .
+
+docker run --name goals-frontend --rm -d -p 3000:3000 -it goals-react
+
+docker network ls
+
+docker network create goals-net
+
+docker run --name mongodb -v data:/data/db -d --rm --network goals-net -e MONGO_INITDB_ROOT_USERNAME=max -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
+
+docker run --name mongodb -v data:/data/db -d --rm --network goals-net mongo
+
+docker run --name goals-backend --rm -d -p 80:80 --network goals-net goals-node
+
+docker run --name goals-frontend --rm -d -p 3000:3000 -it goals-react
+
+docker run --name goals-backend -v logs:/app/logs -v C:\Repos\Docker-Kubernetes-Study\Docker-Kubernetes-Study\multi-01-starting-setup\backend:/app -v /app/node_modules --rm -d -p 80:80 --network goals-net goals-node
+
+docker run --name goals-backend -e MONGODB_USERNAME=max -e MONGODB_PASSWORD=secret -v logs:/app/logs -v C:\Repos\Docker-Kubernetes-Study\Docker-Kubernetes-Study\multi-01-starting-setup\backend:/app -v /app/node_modules --rm -d -p 80:80 --network goals-net goals-node
+
+docker logs goals-backend
+
+docker run -v C:/Repos/Docker-Kubernetes-Study/Docker-Kubernetes-Study/multi-01-starting-setup/frontend/src:/app/src --name goals-frontend --rm -d -p 3000:3000 -it goals-react
+

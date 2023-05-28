@@ -15,6 +15,8 @@ function App() {
 
       try {
         const response = await fetch('http://localhost/goals');
+        //const response = await fetch('http://host.docker.internal/goals');
+        //const response = await fetch('http://goals-backend/goals');
 
         const resData = await response.json();
 
@@ -26,7 +28,7 @@ function App() {
       } catch (err) {
         setError(
           err.message ||
-            'Fetching goals failed - the server responsed with an error.'
+          'Fetching goals failed - the server responded with an error.'
         );
       }
       setIsLoading(false);
@@ -40,6 +42,8 @@ function App() {
 
     try {
       const response = await fetch('http://localhost/goals', {
+        //const response = await fetch('http://host.docker.internal/goals', {
+        //const response = await fetch('http://goals-backend/goals', {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -68,7 +72,7 @@ function App() {
     } catch (err) {
       setError(
         err.message ||
-          'Adding a goal failed - the server responsed with an error.'
+        'Adding a goal failed - the server responded with an error.'
       );
     }
     setIsLoading(false);
@@ -79,6 +83,8 @@ function App() {
 
     try {
       const response = await fetch('http://localhost/goals/' + goalId, {
+        //const response = await fetch('http://host.docker.internal/goals/' + goalId, {
+        //const response = await fetch('http://goals-backend/goals/' + goalId, {
         method: 'DELETE',
       });
 
@@ -95,7 +101,7 @@ function App() {
     } catch (err) {
       setError(
         err.message ||
-          'Deleting the goal failed - the server responsed with an error.'
+        'Deleting the goal failed - the server responded with an error.'
       );
     }
     setIsLoading(false);
