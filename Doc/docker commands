@@ -108,3 +108,10 @@ docker logs goals-backend
 
 docker run -v C:/Repos/Docker-Kubernetes-Study/Docker-Kubernetes-Study/multi-01-starting-setup/frontend/src:/app/src --name goals-frontend --rm -d -p 3000:3000 -it goals-react
 
+docker-compose up -d
+
+docker-compose down
+
+docker-compose down -v
+
+
