@@ -1,4 +1,3 @@
-
 files.exclude
 
 docker
@@ -64,7 +63,7 @@ docker run --name favorites --rm -p 3000:3000 favorites-node
 
 docker run -d --name mongodb --network favorites-net mongo
 
-docker inspect mongodb 
+docker inspect mongodb
 
 docker container prune
 
@@ -122,4 +121,20 @@ docker-compose build
 
 docker volume ls
 
+docker run -it -d node
 
+docker exec -it 8f51bb9f75da npm init
+
+docker run -it node npm init
+
+docker run -it -v C:/Repos/Docker_Kubernetes_Study/Docker-Kubernetes-Study/docker-utility:/app node-util npm init
+
+docker run -it -v C:/Repos/Docker_Kubernetes_Study/Docker-Kubernetes-Study/docker-utility:/app node-util npm install
+
+docker run -it -v C:/Repos/Docker_Kubernetes_Study/Docker-Kubernetes-Study/docker-utility:/app mynpm init
+
+docker run -it -v C:/Repos/Docker_Kubernetes_Study/Docker-Kubernetes-Study/docker-utility:/app mynpm install
+
+docker run -it -v C:/Repos/Docker_Kubernetes_Study/Docker-Kubernetes-Study/docker-utility:/app mynpm install express
+
+docker-compose run --rm npm init
