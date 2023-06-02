@@ -138,3 +138,16 @@ docker run -it -v C:/Repos/Docker_Kubernetes_Study/Docker-Kubernetes-Study/docke
 docker run -it -v C:/Repos/Docker_Kubernetes_Study/Docker-Kubernetes-Study/docker-utility:/app mynpm install express
 
 docker-compose run --rm npm init
+
+docker build -t my-app:1.0 .
+
+docker run -it --rm my-app:1.0
+
+docker ps -a | findstr my-app
+
+docker exec -it 8f51bb9f75da /bin/bash
+docker exec -it 8f51bb9f75da /bin/sh
+ls
+env
+ls /home/app
+exit

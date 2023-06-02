@@ -2,5 +2,8 @@
     "cSpell.words": [
         "INITDB",
         "swfavorites"
-    ]
+    ],
+    "yaml.schemas": {
+        "https://json.schemastore.org/sourcehut-build-0.65.0.json": "file:///c%3A/Repos/Docker-Kubernetes-Study/Docker-Kubernetes-Study/Doc/docker%20commands.yml"
+    }
 }
