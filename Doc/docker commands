@@ -229,6 +229,13 @@ ip route add 10.0.1.0/24 via 10.0.0.3
 
 docker-compose run --rm composer create-project --prefer-dist laravel/laravel .
 
+docker-compose up -d server php mysql
 
+docker-compose up -d --build server
 
+docker-compose down
+
+docker-compose run --rm artisan migrate
+
+docker-compose up -d --build server
 
